@@ -3,10 +3,11 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
-
+const adder = num1 => num2 => num1 + num2;
+const addOne = adder(1);
+console.log(`1 + 1 = ${addOne(1)}`);
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
-
 
 // ==== Challenge 2: Implement a "counter maker" function ====
 const counterMaker = () => {
