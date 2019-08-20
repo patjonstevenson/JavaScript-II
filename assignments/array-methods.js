@@ -498,5 +498,54 @@ const companyList = runners
 console.log(`List of participating companies:\n${companyList}`);
 
 // Problem 2
+// Create a function that returns an object literal containing the total number of each shirt size
+const sizingCount = function(people) {
+  return {
+    XS: people
+      .map(person => person.shirt_size)
+      .filter(size => size === "XS")
+      .reduce((count, shirt) => count + 1, 0),
+    S: people
+      .map(person => person.shirt_size)
+      .filter(size => size === "S")
+      .reduce((count, shirt) => count + 1, 0),
+    M: people
+      .map(person => person.shirt_size)
+      .filter(size => size === "M")
+      .reduce((count, shirt) => count + 1, 0),
+    L: people
+      .map(person => person.shirt_size)
+      .filter(size => size === "L")
+      .reduce((count, shirt) => count + 1, 0),
+    XL: people
+      .map(person => person.shirt_size)
+      .filter(size => size === "XL")
+      .reduce((count, shirt) => count + 1, 0),
+    "2XL": people
+      .map(person => person.shirt_size)
+      .filter(size => size === "2XL")
+      .reduce((count, shirt) => count + 1, 0),
+    "3XL": people
+      .map(person => person.shirt_size)
+      .filter(size => size === "3XL")
+      .reduce((count, shirt) => count + 1, 0)
+  };
+};
+
+console.log(`Shirt sizes:\n${JSON.stringify(sizingCount(runners))}`);
 
 // Problem 3
+// The event director, again on a power trip, decides to make all the runners get new email addresses.
+// Create a list of the new email addresses, as strings, in the following format:
+//    first_name.last_name.donation@runners.com
+// (the program director also decided to buy a domain name and set up an email server)
+const newEmails = [];
+runners.forEach(runner =>
+  newEmails.push(
+    `${runner.first_name.toLowerCase()}.${runner.last_name.toLowerCase()}.${
+      runner.donation
+    }@runners.com`
+  )
+);
+
+console.log(`New emails:\n${newEmails}`);
