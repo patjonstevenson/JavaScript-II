@@ -87,3 +87,10 @@ function removeDuplicates(array, cb) {
   );
 }
 console.log(removeDuplicates(stretchItems, x => `New list is ${x}`));
+
+function removeDuplicates(array, cb) {
+  // removeDuplicates removes all duplicate values from the given array.
+  // Pass the duplicate free array to the callback function.
+  // Do not mutate the original array.
+  return cb();
+}
