@@ -490,7 +490,9 @@ const companyList = runners
   .map(runner => runner.company_name)
   .reduce(
     (newList, company) =>
-      newList.includes(company) ? newList : [...newList, company],
+      newList.filter(listItem => listItem === company).length === 0
+        ? [...newList, company]
+        : newList,
     []
   );
 console.log(`List of participating companies:\n${companyList}`);

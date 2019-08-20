@@ -79,19 +79,13 @@ function removeDuplicates(array, cb) {
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
   return cb(
-    array.reduce(function(newList, item) {
-      if (newList.filter(listItem => listItem === item).length === 0) {
-        newList.concat(item);
-      }
-    }, [])
+    array.reduce(
+      (newList, item) =>
+        newList.filter(listItem => listItem === item).length === 0
+          ? [...newList, item]
+          : newList,
+      []
+    )
   );
 }
 console.log(removeDuplicates(stretchItems, x => `New list is ${x}`));
-
-/*function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
-  return cb(
-  );
-}*/
