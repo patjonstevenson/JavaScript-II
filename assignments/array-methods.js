@@ -486,7 +486,14 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 //  Create a list of the companies represented, with no redundancies
-const companyList = runners;
+const companyList = runners
+  .map(runner => runner.company_name)
+  .reduce(
+    (newList, company) =>
+      newList.includes(company) ? newList : [...newList, company],
+    []
+  );
+console.log(`List of participating companies:\n${companyList}`);
 
 // Problem 2
 
