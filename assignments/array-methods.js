@@ -501,34 +501,22 @@ console.log(`List of participating companies:\n${companyList}`);
 // Create a function that returns an object literal containing the total number of each shirt size
 const sizingCount = function(people) {
   return {
-    XS: people
-      .map(person => person.shirt_size)
-      .filter(size => size === "XS")
-      .reduce((count, shirt) => count + 1, 0),
-    S: people
-      .map(person => person.shirt_size)
-      .filter(size => size === "S")
-      .reduce((count, shirt) => count + 1, 0),
-    M: people
-      .map(person => person.shirt_size)
-      .filter(size => size === "M")
-      .reduce((count, shirt) => count + 1, 0),
-    L: people
-      .map(person => person.shirt_size)
-      .filter(size => size === "L")
-      .reduce((count, shirt) => count + 1, 0),
-    XL: people
-      .map(person => person.shirt_size)
-      .filter(size => size === "XL")
-      .reduce((count, shirt) => count + 1, 0),
+    XS: people.map(person => person.shirt_size).filter(size => size === "XS")
+      .length,
+    S: people.map(person => person.shirt_size).filter(size => size === "S")
+      .length,
+    M: people.map(person => person.shirt_size).filter(size => size === "M")
+      .length,
+    L: people.map(person => person.shirt_size).filter(size => size === "L")
+      .length,
+    XL: people.map(person => person.shirt_size).filter(size => size === "XL")
+      .length,
     "2XL": people
       .map(person => person.shirt_size)
-      .filter(size => size === "2XL")
-      .reduce((count, shirt) => count + 1, 0),
+      .filter(size => size === "2XL").length,
     "3XL": people
       .map(person => person.shirt_size)
-      .filter(size => size === "3XL")
-      .reduce((count, shirt) => count + 1, 0)
+      .filter(size => size === "3XL").length
   };
 };
 
